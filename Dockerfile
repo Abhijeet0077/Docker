@@ -3,7 +3,7 @@ FROM centos
 MAINTAINER ABHIJEET
 RUN yum install git python2 sqlite -y
 
-RUN git clone https://github.com/komarserjio/notejam.git
+RUN git clone https://github.com/Abhijeet0077/notejam.git
 
 WORKDIR /notejam/django
 
