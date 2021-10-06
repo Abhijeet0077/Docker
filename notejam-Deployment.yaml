@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notejam-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: notejam
+  template:
+    metadata:
+      labels:
+        app: notejam
+    spec:
+      containers:
+      - name: 
+        image: naruto127712/notejam
+        ports:
+        - containerPort: 8000
+
