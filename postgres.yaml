@@ -1,0 +1,15 @@
+spec:
+  hostname: postgres
+  containers:
+  - name: postgres
+    image: postgres:9.5
+    imagePullPolicy: "IfNotPresent"
+    ports:
+      - containerPort: 8000
+    volumeMounts:
+    - mountPath: /var/lib/postgresql/data
+      name: postgresdb
+  volumes:
+  - name: postgresdb
+    persistentVolumeClaim:
+      claimName: postgres-pv-claim

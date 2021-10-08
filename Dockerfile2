@@ -1,6 +1,0 @@
-FROM postgres:8.4.22
-
-ENV POSTGRES_USER naruto
-ENV POSTGRES_PASSWORD xenonstack007
-ENV POSTGRES_DB notejam
-

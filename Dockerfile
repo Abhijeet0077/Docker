@@ -1,16 +1,14 @@
 FROM centos
 
 MAINTAINER ABHIJEET
-RUN yum install git python2 sqlite -y
 
+RUN yum install git python2 sqlite -y
 RUN git clone https://github.com/Abhijeet0077/notejam.git
 
 WORKDIR /notejam/django
 
-RUN pip2 install -r requirements.txt
-
+RUN pip2 install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
 RUN python2 ./notejam/manage.py syncdb --noinput
-
 RUN python2 ./notejam/manage.py migrate
 
 EXPOSE 8000
